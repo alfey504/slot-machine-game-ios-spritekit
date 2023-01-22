@@ -31,6 +31,8 @@
 		F61EE087297BCC1800ED0423 /* QuitButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61EE086297BCC1800ED0423 /* QuitButtonNode.swift */; };
 		F61EE089297BCEF900ED0423 /* ResetButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61EE088297BCEF900ED0423 /* ResetButtonNode.swift */; };
 		F61EE08C297CE7D700ED0423 /* SlotMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61EE08B297CE7D700ED0423 /* SlotMachine.swift */; };
+		F61EE08E297D2E1800ED0423 /* MessageNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61EE08D297D2E1800ED0423 /* MessageNode.swift */; };
+		F61EE090297D36EF00ED0423 /* MessageNodeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61EE08F297D36EF00ED0423 /* MessageNodeDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,8 @@
 		F61EE086297BCC1800ED0423 /* QuitButtonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuitButtonNode.swift; sourceTree = "<group>"; };
 		F61EE088297BCEF900ED0423 /* ResetButtonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetButtonNode.swift; sourceTree = "<group>"; };
 		F61EE08B297CE7D700ED0423 /* SlotMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotMachine.swift; sourceTree = "<group>"; };
+		F61EE08D297D2E1800ED0423 /* MessageNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageNode.swift; sourceTree = "<group>"; };
+		F61EE08F297D36EF00ED0423 /* MessageNodeDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageNodeDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +178,7 @@
 				F61EE07F297BBBCD00ED0423 /* SpinButtonNode.swift */,
 				F61EE086297BCC1800ED0423 /* QuitButtonNode.swift */,
 				F61EE088297BCEF900ED0423 /* ResetButtonNode.swift */,
+				F61EE08D297D2E1800ED0423 /* MessageNode.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -200,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				F61EE082297BC21800ED0423 /* SpinButtonNodeDelegate.swift */,
+				F61EE08F297D36EF00ED0423 /* MessageNodeDelegate.swift */,
 			);
 			path = Delegate;
 			sourceTree = "<group>";
@@ -355,7 +361,9 @@
 				F61EE080297BBBCD00ED0423 /* SpinButtonNode.swift in Sources */,
 				F61EE083297BC21800ED0423 /* SpinButtonNodeDelegate.swift in Sources */,
 				F61EE073297ACE3200ED0423 /* SkLabelNodeExtension.swift in Sources */,
+				F61EE090297D36EF00ED0423 /* MessageNodeDelegate.swift in Sources */,
 				F61EE06A297AB7AE00ED0423 /* BackgroundNode.swift in Sources */,
+				F61EE08E297D2E1800ED0423 /* MessageNode.swift in Sources */,
 				F61EE077297B3E4C00ED0423 /* SlotReelNode.swift in Sources */,
 				F61EE03D297AAD3200ED0423 /* GameViewController.swift in Sources */,
 				F61EE085297BC61700ED0423 /* StringExtension.swift in Sources */,

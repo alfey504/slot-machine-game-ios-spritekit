@@ -41,6 +41,10 @@ class JackpotNode: SKNode {
         zPosition = 2
     }
     
+    func setJackpotMoney(money: Float){
+        jackpotMoney?.text = "$ " + String(money)
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }

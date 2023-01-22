@@ -7,7 +7,7 @@
 
 import SpriteKit
 
-class GameScene: SKScene, SpinButtonNodeDelegate{
+class GameScene: SKScene, SpinButtonNodeDelegate, MessageNodeDelegate{
     
     private var backgroundNode: BackgroundNode?
     private var jackpotNode: JackpotNode?
@@ -19,6 +19,7 @@ class GameScene: SKScene, SpinButtonNodeDelegate{
     private var spinButton: SpinButtonNode?
     private var quitButton: QuitButtonNode?
     private var resetButton: ResetButtonNode?
+    private var messageNode: MessageNode?
     
     private var slotMachine: SlotMachine?
     
@@ -28,6 +29,7 @@ class GameScene: SKScene, SpinButtonNodeDelegate{
         self.betTextField?.addTarget(self, action: #selector(betChanged(_:)), for: .editingChanged)
         
         slotMachine = SlotMachine()
+//        slotMachine?.setSimulateJackpotWin(SIMULATE_JACKPOT_WIN: true) 
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -42,6 +44,7 @@ class GameScene: SKScene, SpinButtonNodeDelegate{
         backgroundNode?.zPosition = -1
         
         jackpotNode = JackpotNode()
+        jackpotNode?.setJackpotMoney(money: slotMachine!.jackPot!)
         let jackpotHeightOffset = 240.0
         jackpotNode?.position = CGPoint(x: frame.midX, y: frame.midY + jackpotHeightOffset)
         jackpotNode?.zPosition = 1
@@ -90,7 +93,6 @@ class GameScene: SKScene, SpinButtonNodeDelegate{
         resetButton?.position = CGPoint(x: frame.midX + resetButtonXOffset, y: frame.midY + resetButtonYOffset)
         resetButton?.zPosition = 1
         
-        
         addChild(backgroundNode!)
         addChild(jackpotNode!)
         addChild(slotNode!)
@@ -103,8 +105,40 @@ class GameScene: SKScene, SpinButtonNodeDelegate{
     }
     
     func spinButtonPressed() {
-        let slotPredictions = Array<Int>([2, 4, 6, 3, 4])
+        let slotPredictions = Array<Int>([2, 4, 3, 1, 2])
         slotNode?.animateSlotTo(predictions: slotPredictions)
+        if(slotMachine!.checkJackpotWin()){
+            jackpotIsWon()
+        }
+    }
+    
+    func messageClosed() {
+        betTextField?.isHidden = false
+        let text = betTextField!.text!
+        if(slotMachine!.verifyBet(text: text)){
+            spinButton?.setEnabled(enabled: true)
+        }else{
+            spinButton?.setEnabled(enabled: false)
+        }
+    }
+    
+    func animationComplete() {
+        
+    }
+    
+    func jackpotIsWon(){
+        
+        betTextField?.isHidden = true
+        
+        let message = "You have won the jackpot"
+        let message2 = "$ " + String(slotMachine!.jackPot!)
+        messageNode = MessageNode(emoticon: SKTexture(imageNamed: "jackpot-banner"), header: "Jackpot", message: message, message2: message2)
+        messageNode?.position = CGPoint(x: frame.midX, y: frame.midY)
+        messageNode?.zPosition = 8
+        
+        messageNode?.delegate = self
+        
+        addChild(messageNode!)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -113,31 +147,14 @@ class GameScene: SKScene, SpinButtonNodeDelegate{
         }
     }
     
+    
     @objc func betChanged(_ textField: UITextField){
         let text = textField.text!
         
-        if(text == ""){
-            spinButton?.setEnabled(enabled: false)
-            return
-        }
-        
-        if(text.isNumber()){
+        if(slotMachine!.verifyBet(text: text)){
             spinButton?.setEnabled(enabled: true)
         }else{
             spinButton?.setEnabled(enabled: false)
-            return
-        }
-        
-        guard let bet = Float(text) else{
-            spinButton?.setEnabled(enabled: false)
-            return
-        }
-        
-        if(slotMachine!.isValidBet(bet: bet)){
-            spinButton?.setEnabled(enabled: true)
-        }else{
-            spinButton?.setEnabled(enabled: false)
-            return
         }
     }
     
