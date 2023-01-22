@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+protocol SpinButtonNodeDelegate: AnyObject {
+    func spinButtonPressed()
+}

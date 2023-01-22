@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		F61EE035297AAD3200ED0423 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61EE034297AAD3200ED0423 /* AppDelegate.swift */; };
-		F61EE037297AAD3200ED0423 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = F61EE036297AAD3200ED0423 /* GameScene.sks */; };
-		F61EE039297AAD3200ED0423 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = F61EE038297AAD3200ED0423 /* Actions.sks */; };
 		F61EE03B297AAD3200ED0423 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61EE03A297AAD3200ED0423 /* GameScene.swift */; };
 		F61EE03D297AAD3200ED0423 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61EE03C297AAD3200ED0423 /* GameViewController.swift */; };
 		F61EE040297AAD3200ED0423 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F61EE03E297AAD3200ED0423 /* Main.storyboard */; };
@@ -18,6 +16,21 @@
 		F61EE04F297AAD3300ED0423 /* Slot_Machine_GameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61EE04E297AAD3300ED0423 /* Slot_Machine_GameTests.swift */; };
 		F61EE059297AAD3300ED0423 /* Slot_Machine_GameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61EE058297AAD3300ED0423 /* Slot_Machine_GameUITests.swift */; };
 		F61EE05B297AAD3300ED0423 /* Slot_Machine_GameUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61EE05A297AAD3300ED0423 /* Slot_Machine_GameUITestsLaunchTests.swift */; };
+		F61EE06A297AB7AE00ED0423 /* BackgroundNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61EE069297AB7AE00ED0423 /* BackgroundNode.swift */; };
+		F61EE06C297AC0EF00ED0423 /* JackpotNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61EE06B297AC0EF00ED0423 /* JackpotNode.swift */; };
+		F61EE073297ACE3200ED0423 /* SkLabelNodeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61EE072297ACE3200ED0423 /* SkLabelNodeExtension.swift */; };
+		F61EE075297B3E0000ED0423 /* SlotNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61EE074297B3E0000ED0423 /* SlotNode.swift */; };
+		F61EE077297B3E4C00ED0423 /* SlotReelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61EE076297B3E4C00ED0423 /* SlotReelNode.swift */; };
+		F61EE079297B879100ED0423 /* InfoNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61EE078297B879100ED0423 /* InfoNode.swift */; };
+		F61EE07B297B8C3C00ED0423 /* InputNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61EE07A297B8C3C00ED0423 /* InputNode.swift */; };
+		F61EE07C297B93B700ED0423 /* Rye-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F61EE06E297AC8C900ED0423 /* Rye-Regular.ttf */; };
+		F61EE07E297BA5AA00ED0423 /* CuteFont-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F61EE07D297BA5AA00ED0423 /* CuteFont-Regular.ttf */; };
+		F61EE080297BBBCD00ED0423 /* SpinButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61EE07F297BBBCD00ED0423 /* SpinButtonNode.swift */; };
+		F61EE083297BC21800ED0423 /* SpinButtonNodeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61EE082297BC21800ED0423 /* SpinButtonNodeDelegate.swift */; };
+		F61EE085297BC61700ED0423 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61EE084297BC61700ED0423 /* StringExtension.swift */; };
+		F61EE087297BCC1800ED0423 /* QuitButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61EE086297BCC1800ED0423 /* QuitButtonNode.swift */; };
+		F61EE089297BCEF900ED0423 /* ResetButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61EE088297BCEF900ED0423 /* ResetButtonNode.swift */; };
+		F61EE08C297CE7D700ED0423 /* SlotMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61EE08B297CE7D700ED0423 /* SlotMachine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +53,6 @@
 /* Begin PBXFileReference section */
 		F61EE031297AAD3200ED0423 /* Slot Machine Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Slot Machine Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F61EE034297AAD3200ED0423 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F61EE036297AAD3200ED0423 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		F61EE038297AAD3200ED0423 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		F61EE03A297AAD3200ED0423 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		F61EE03C297AAD3200ED0423 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		F61EE03F297AAD3200ED0423 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -52,6 +63,22 @@
 		F61EE054297AAD3300ED0423 /* Slot Machine GameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Slot Machine GameUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F61EE058297AAD3300ED0423 /* Slot_Machine_GameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slot_Machine_GameUITests.swift; sourceTree = "<group>"; };
 		F61EE05A297AAD3300ED0423 /* Slot_Machine_GameUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slot_Machine_GameUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F61EE069297AB7AE00ED0423 /* BackgroundNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundNode.swift; sourceTree = "<group>"; };
+		F61EE06B297AC0EF00ED0423 /* JackpotNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JackpotNode.swift; sourceTree = "<group>"; };
+		F61EE06E297AC8C900ED0423 /* Rye-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rye-Regular.ttf"; path = "../../../../../../../../Downloads/Rye/Rye-Regular.ttf"; sourceTree = "<group>"; };
+		F61EE070297ACC2F00ED0423 /* Slot-Machine-Game-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Slot-Machine-Game-Info.plist"; sourceTree = SOURCE_ROOT; };
+		F61EE072297ACE3200ED0423 /* SkLabelNodeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkLabelNodeExtension.swift; sourceTree = "<group>"; };
+		F61EE074297B3E0000ED0423 /* SlotNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotNode.swift; sourceTree = "<group>"; };
+		F61EE076297B3E4C00ED0423 /* SlotReelNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotReelNode.swift; sourceTree = "<group>"; };
+		F61EE078297B879100ED0423 /* InfoNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoNode.swift; sourceTree = "<group>"; };
+		F61EE07A297B8C3C00ED0423 /* InputNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputNode.swift; sourceTree = "<group>"; };
+		F61EE07D297BA5AA00ED0423 /* CuteFont-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "CuteFont-Regular.ttf"; path = "../../../../../../../../Downloads/Cute_Font/CuteFont-Regular.ttf"; sourceTree = "<group>"; };
+		F61EE07F297BBBCD00ED0423 /* SpinButtonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinButtonNode.swift; sourceTree = "<group>"; };
+		F61EE082297BC21800ED0423 /* SpinButtonNodeDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinButtonNodeDelegate.swift; sourceTree = "<group>"; };
+		F61EE084297BC61700ED0423 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		F61EE086297BCC1800ED0423 /* QuitButtonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuitButtonNode.swift; sourceTree = "<group>"; };
+		F61EE088297BCEF900ED0423 /* ResetButtonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetButtonNode.swift; sourceTree = "<group>"; };
+		F61EE08B297CE7D700ED0423 /* SlotMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotMachine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,9 +129,13 @@
 		F61EE033297AAD3200ED0423 /* Slot Machine Game */ = {
 			isa = PBXGroup;
 			children = (
+				F61EE08A297CE7B600ED0423 /* UtilClasses */,
+				F61EE081297BC1F200ED0423 /* Delegate */,
+				F61EE071297ACE0F00ED0423 /* Extensions */,
+				F61EE070297ACC2F00ED0423 /* Slot-Machine-Game-Info.plist */,
+				F61EE06D297AC85600ED0423 /* fonts */,
+				F61EE067297AB75800ED0423 /* Nodes */,
 				F61EE034297AAD3200ED0423 /* AppDelegate.swift */,
-				F61EE036297AAD3200ED0423 /* GameScene.sks */,
-				F61EE038297AAD3200ED0423 /* Actions.sks */,
 				F61EE03A297AAD3200ED0423 /* GameScene.swift */,
 				F61EE03C297AAD3200ED0423 /* GameViewController.swift */,
 				F61EE03E297AAD3200ED0423 /* Main.storyboard */,
@@ -129,6 +160,56 @@
 				F61EE05A297AAD3300ED0423 /* Slot_Machine_GameUITestsLaunchTests.swift */,
 			);
 			path = "Slot Machine GameUITests";
+			sourceTree = "<group>";
+		};
+		F61EE067297AB75800ED0423 /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				F61EE069297AB7AE00ED0423 /* BackgroundNode.swift */,
+				F61EE06B297AC0EF00ED0423 /* JackpotNode.swift */,
+				F61EE074297B3E0000ED0423 /* SlotNode.swift */,
+				F61EE076297B3E4C00ED0423 /* SlotReelNode.swift */,
+				F61EE078297B879100ED0423 /* InfoNode.swift */,
+				F61EE07A297B8C3C00ED0423 /* InputNode.swift */,
+				F61EE07F297BBBCD00ED0423 /* SpinButtonNode.swift */,
+				F61EE086297BCC1800ED0423 /* QuitButtonNode.swift */,
+				F61EE088297BCEF900ED0423 /* ResetButtonNode.swift */,
+			);
+			path = Nodes;
+			sourceTree = "<group>";
+		};
+		F61EE06D297AC85600ED0423 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F61EE07D297BA5AA00ED0423 /* CuteFont-Regular.ttf */,
+				F61EE06E297AC8C900ED0423 /* Rye-Regular.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		F61EE071297ACE0F00ED0423 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F61EE072297ACE3200ED0423 /* SkLabelNodeExtension.swift */,
+				F61EE084297BC61700ED0423 /* StringExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F61EE081297BC1F200ED0423 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				F61EE082297BC21800ED0423 /* SpinButtonNodeDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		F61EE08A297CE7B600ED0423 /* UtilClasses */ = {
+			isa = PBXGroup;
+			children = (
+				F61EE08B297CE7D700ED0423 /* SlotMachine.swift */,
+			);
+			path = UtilClasses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,10 +317,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F61EE040297AAD3200ED0423 /* Main.storyboard in Resources */,
-				F61EE037297AAD3200ED0423 /* GameScene.sks in Resources */,
+				F61EE07E297BA5AA00ED0423 /* CuteFont-Regular.ttf in Resources */,
 				F61EE042297AAD3300ED0423 /* Assets.xcassets in Resources */,
+				F61EE07C297B93B700ED0423 /* Rye-Regular.ttf in Resources */,
 				F61EE045297AAD3300ED0423 /* LaunchScreen.storyboard in Resources */,
-				F61EE039297AAD3200ED0423 /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,7 +346,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				F61EE03B297AAD3200ED0423 /* GameScene.swift in Sources */,
+				F61EE06C297AC0EF00ED0423 /* JackpotNode.swift in Sources */,
+				F61EE07B297B8C3C00ED0423 /* InputNode.swift in Sources */,
+				F61EE08C297CE7D700ED0423 /* SlotMachine.swift in Sources */,
+				F61EE075297B3E0000ED0423 /* SlotNode.swift in Sources */,
+				F61EE087297BCC1800ED0423 /* QuitButtonNode.swift in Sources */,
+				F61EE079297B879100ED0423 /* InfoNode.swift in Sources */,
+				F61EE080297BBBCD00ED0423 /* SpinButtonNode.swift in Sources */,
+				F61EE083297BC21800ED0423 /* SpinButtonNodeDelegate.swift in Sources */,
+				F61EE073297ACE3200ED0423 /* SkLabelNodeExtension.swift in Sources */,
+				F61EE06A297AB7AE00ED0423 /* BackgroundNode.swift in Sources */,
+				F61EE077297B3E4C00ED0423 /* SlotReelNode.swift in Sources */,
 				F61EE03D297AAD3200ED0423 /* GameViewController.swift in Sources */,
+				F61EE085297BC61700ED0423 /* StringExtension.swift in Sources */,
+				F61EE089297BCEF900ED0423 /* ResetButtonNode.swift in Sources */,
 				F61EE035297AAD3200ED0423 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,12 +539,14 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SS742B69L7;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Slot-Machine-Game-Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -458,9 +554,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ca.centennialcollege.Slot-Machine-Game";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -473,12 +572,14 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SS742B69L7;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Slot-Machine-Game-Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -486,9 +587,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ca.centennialcollege.Slot-Machine-Game";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
