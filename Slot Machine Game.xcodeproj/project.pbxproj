@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		46288517297DFB6000E83BDB /* Rye-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46288516297DF2E100E83BDB /* Rye-Regular.ttf */; };
+		46288518297DFB6500E83BDB /* CuteFont-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46288515297DF2CB00E83BDB /* CuteFont-Regular.ttf */; };
 		F61EE035297AAD3200ED0423 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61EE034297AAD3200ED0423 /* AppDelegate.swift */; };
 		F61EE03B297AAD3200ED0423 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61EE03A297AAD3200ED0423 /* GameScene.swift */; };
 		F61EE03D297AAD3200ED0423 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61EE03C297AAD3200ED0423 /* GameViewController.swift */; };
@@ -23,8 +25,6 @@
 		F61EE077297B3E4C00ED0423 /* SlotReelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61EE076297B3E4C00ED0423 /* SlotReelNode.swift */; };
 		F61EE079297B879100ED0423 /* InfoNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61EE078297B879100ED0423 /* InfoNode.swift */; };
 		F61EE07B297B8C3C00ED0423 /* InputNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61EE07A297B8C3C00ED0423 /* InputNode.swift */; };
-		F61EE07C297B93B700ED0423 /* Rye-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F61EE06E297AC8C900ED0423 /* Rye-Regular.ttf */; };
-		F61EE07E297BA5AA00ED0423 /* CuteFont-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F61EE07D297BA5AA00ED0423 /* CuteFont-Regular.ttf */; };
 		F61EE080297BBBCD00ED0423 /* SpinButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61EE07F297BBBCD00ED0423 /* SpinButtonNode.swift */; };
 		F61EE083297BC21800ED0423 /* SpinButtonNodeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61EE082297BC21800ED0423 /* SpinButtonNodeDelegate.swift */; };
 		F61EE085297BC61700ED0423 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61EE084297BC61700ED0423 /* StringExtension.swift */; };
@@ -53,6 +53,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		46288515297DF2CB00E83BDB /* CuteFont-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CuteFont-Regular.ttf"; sourceTree = "<group>"; };
+		46288516297DF2E100E83BDB /* Rye-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rye-Regular.ttf"; sourceTree = "<group>"; };
 		F61EE031297AAD3200ED0423 /* Slot Machine Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Slot Machine Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F61EE034297AAD3200ED0423 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F61EE03A297AAD3200ED0423 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -67,14 +69,12 @@
 		F61EE05A297AAD3300ED0423 /* Slot_Machine_GameUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slot_Machine_GameUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F61EE069297AB7AE00ED0423 /* BackgroundNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundNode.swift; sourceTree = "<group>"; };
 		F61EE06B297AC0EF00ED0423 /* JackpotNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JackpotNode.swift; sourceTree = "<group>"; };
-		F61EE06E297AC8C900ED0423 /* Rye-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rye-Regular.ttf"; path = "../../../../../../../../Downloads/Rye/Rye-Regular.ttf"; sourceTree = "<group>"; };
 		F61EE070297ACC2F00ED0423 /* Slot-Machine-Game-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Slot-Machine-Game-Info.plist"; sourceTree = SOURCE_ROOT; };
 		F61EE072297ACE3200ED0423 /* SkLabelNodeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkLabelNodeExtension.swift; sourceTree = "<group>"; };
 		F61EE074297B3E0000ED0423 /* SlotNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotNode.swift; sourceTree = "<group>"; };
 		F61EE076297B3E4C00ED0423 /* SlotReelNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotReelNode.swift; sourceTree = "<group>"; };
 		F61EE078297B879100ED0423 /* InfoNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoNode.swift; sourceTree = "<group>"; };
 		F61EE07A297B8C3C00ED0423 /* InputNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputNode.swift; sourceTree = "<group>"; };
-		F61EE07D297BA5AA00ED0423 /* CuteFont-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "CuteFont-Regular.ttf"; path = "../../../../../../../../Downloads/Cute_Font/CuteFont-Regular.ttf"; sourceTree = "<group>"; };
 		F61EE07F297BBBCD00ED0423 /* SpinButtonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinButtonNode.swift; sourceTree = "<group>"; };
 		F61EE082297BC21800ED0423 /* SpinButtonNodeDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinButtonNodeDelegate.swift; sourceTree = "<group>"; };
 		F61EE084297BC61700ED0423 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
@@ -186,8 +186,8 @@
 		F61EE06D297AC85600ED0423 /* fonts */ = {
 			isa = PBXGroup;
 			children = (
-				F61EE07D297BA5AA00ED0423 /* CuteFont-Regular.ttf */,
-				F61EE06E297AC8C900ED0423 /* Rye-Regular.ttf */,
+				46288516297DF2E100E83BDB /* Rye-Regular.ttf */,
+				46288515297DF2CB00E83BDB /* CuteFont-Regular.ttf */,
 			);
 			path = fonts;
 			sourceTree = "<group>";
@@ -323,9 +323,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F61EE040297AAD3200ED0423 /* Main.storyboard in Resources */,
-				F61EE07E297BA5AA00ED0423 /* CuteFont-Regular.ttf in Resources */,
+				46288518297DFB6500E83BDB /* CuteFont-Regular.ttf in Resources */,
 				F61EE042297AAD3300ED0423 /* Assets.xcassets in Resources */,
-				F61EE07C297B93B700ED0423 /* Rye-Regular.ttf in Resources */,
+				46288517297DFB6000E83BDB /* Rye-Regular.ttf in Resources */,
 				F61EE045297AAD3300ED0423 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

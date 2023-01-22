@@ -2,7 +2,18 @@
 //  GameScene.swift
 //  Slot Machine Game
 //
-//  Created by Abraham Alfred Babu on 2023-01-20.
+//  Created on 2023-01-20.
+//
+//  Authors
+//  --------------------------------------
+//  Abraham Alfred Babu
+//  Student ID : 301270598
+//
+//  Pia Mae Obias
+//  Student ID: 301283632
+//
+//  Satender Yadav
+//  Student ID: 301293305
 //
 
 import SpriteKit
@@ -29,7 +40,7 @@ class GameScene: SKScene, SpinButtonNodeDelegate, MessageNodeDelegate{
         self.betTextField?.addTarget(self, action: #selector(betChanged(_:)), for: .editingChanged)
         
         slotMachine = SlotMachine()
-//        slotMachine?.setSimulateJackpotWin(SIMULATE_JACKPOT_WIN: true) 
+        //slotMachine?.setSimulateJackpotWin(SIMULATE_JACKPOT_WIN: true)
     }
     
     required init?(coder aDecoder: NSCoder) {
