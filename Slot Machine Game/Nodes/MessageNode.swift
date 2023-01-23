@@ -18,6 +18,7 @@ class MessageNode: SKNode{
     private var messageNode: SKLabelNode?
     private var message2Node: SKLabelNode?
     
+    // enableing user interaction on the node
     override var isUserInteractionEnabled: Bool {
            set {
                // ignore
@@ -27,19 +28,23 @@ class MessageNode: SKNode{
            }
     }
     
+    
     init(emoticon: SKTexture, header: String, message: String, message2: String) {
         super.init()
         
+        // backdrop of the node
         backgroundNode = SKSpriteNode(imageNamed: "message-backdrop")
         backgroundNode?.size = CGSize(width: 350, height: 450)
         backgroundNode?.position = CGPoint(x: frame.midX, y: frame.midY)
         
+        // emoticon for the node
         let emoticonSize = CGSize(width: 150.0, height: 100.0)
         emoticonNode = SKSpriteNode(texture: emoticon, size: emoticonSize)
         let emoticonNodeYOffset = 150.0
         emoticonNode?.position = CGPoint(x: frame.midX, y: frame.midY + emoticonNodeYOffset)
         emoticonNode?.zPosition = 10
         
+        // heading for the message
         headerNode = SKLabelNode()
         headerNode?.text = header
         headerNode?.fontName = "Rye-Regular"
@@ -49,6 +54,7 @@ class MessageNode: SKNode{
         headerNode?.position = CGPoint(x: frame.midX, y: frame.midY + headerNodeYOffset)
         headerNode?.zPosition = 10
         
+        // message for the message node
         messageNode = SKLabelNode()
         messageNode?.text = message
         messageNode?.fontName = "Rye-Regular"
@@ -58,6 +64,7 @@ class MessageNode: SKNode{
         messageNode?.position = CGPoint(x: frame.midX, y: frame.midY + messageNodeYOffset)
         messageNode?.zPosition = 10
         
+        // second line message node
         message2Node = SKLabelNode()
         message2Node?.text = message2
         message2Node?.fontName = "Rye-Regular"
@@ -74,6 +81,7 @@ class MessageNode: SKNode{
         addChild(message2Node!)
     }
     
+    // when user touches the node
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if(delegate != nil){
             delegate?.messageClosed()

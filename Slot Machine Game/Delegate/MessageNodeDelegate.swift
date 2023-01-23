@@ -18,6 +18,7 @@
 
 import Foundation
 
+// for message node to communicate to the GameScene
 protocol MessageNodeDelegate: AnyObject {
     func messageClosed()
 }

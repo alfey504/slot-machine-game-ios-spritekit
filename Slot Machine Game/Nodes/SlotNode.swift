@@ -8,6 +8,7 @@
 import Foundation
 import SpriteKit
 
+// For showing the slots in the slot machine
 class SlotNode: SKNode{
     
     private var slotReel1: SlotReelNode?
@@ -23,11 +24,13 @@ class SlotNode: SKNode{
     override init() {
         super.init()
         
+        // backdrop of the node
         slotBackdrop = SKSpriteNode(imageNamed: "slot-backdrop")
         slotBackdrop?.size = CGSize(width: 350, height: 110)
         slotBackdrop?.zPosition = -1
         
         
+        // adding all the slot reels
         let slotReelYOffset: CGFloat = 3.0
         slotReel1 = SlotReelNode(offset: slotReelYOffset)
         let slotReelXOffset = (slotReel1!.size!.width/2) + 15.0
@@ -63,6 +66,7 @@ class SlotNode: SKNode{
         addChild(slotBackdrop!)
     }
     
+    // animates all the slot according to given array
     func animateSlotTo(predictions: Array<Int>){
         slotReel1?.moveSlotTo(number: predictions[0])
         slotReel2?.moveSlotTo(number: predictions[1])

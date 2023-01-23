@@ -18,6 +18,7 @@
 
 import Foundation
 
+// class to handle all the slot machine functions
 class SlotMachine{
     
     var credits: Float?
@@ -35,6 +36,7 @@ class SlotMachine{
         self.SIMULATE_JACKPOT_WIN = SIMULATE_JACKPOT_WIN
     }
     
+    // verify the enterd bet
     func verifyBet(text: String) -> Bool{
         
         if(text == ""){
@@ -56,14 +58,17 @@ class SlotMachine{
         return true
     }
     
+    // check if bet is lower than the credit
     func isValidBet(bet: Float) -> Bool{
         return(bet <= credits!)
     }
     
+    // simulats a jackpot win if set to true
     func setSimulateJackpotWin(SIMULATE_JACKPOT_WIN: Bool){
         self.SIMULATE_JACKPOT_WIN = SIMULATE_JACKPOT_WIN
     }
     
+    // check for a jackpot win
     func checkJackpotWin() -> Bool {
         let jackPotTry = (Int.random(in: 0...1000) * 51) + 1
         let jackPotWin = (Int.random(in: 0...1000) * 51) + 1

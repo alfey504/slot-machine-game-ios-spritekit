@@ -8,6 +8,7 @@
 import Foundation
 import SpriteKit
 
+// simple button node
 class QuitButtonNode: SKNode{
     
     private var quitButtonSprite: SKSpriteNode?
@@ -15,6 +16,7 @@ class QuitButtonNode: SKNode{
     override init() {
         super.init()
         
+        //setting a texture for the button
         quitButtonSprite = SKSpriteNode(imageNamed: "quit-button")
         quitButtonSprite?.size = CGSize(width: 100.0, height: 50.0)
         quitButtonSprite?.position = CGPoint(x: frame.midX, y: frame.midY)

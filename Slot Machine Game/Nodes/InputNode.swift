@@ -8,6 +8,8 @@
 import Foundation
 import SpriteKit
 
+// For getting intputs
+// (note:- The input control itself is UITextField showed on top of the GameScene)
 class InputNode: SKNode{
     
     private var backdropNode: SKSpriteNode?
@@ -16,11 +18,13 @@ class InputNode: SKNode{
     override init(){
         super.init()
         
+        // backdrop of the node
         backdropNode = SKSpriteNode(imageNamed: "slot-backdrop")
         backdropNode?.size = CGSize(width: 360.0, height: 70.0)
         backdropNode?.position = CGPoint(x: frame.midX, y: frame.midY)
         backdropNode?.zPosition = -1
         
+        // title for the input
         labelNode = SKLabelNode()
         labelNode?.text = "BET"
         labelNode?.fontName = "CuteFont-Regular"
@@ -35,6 +39,7 @@ class InputNode: SKNode{
         
     }
     
+    // seting the title
     func setLabel(label: String){
         labelNode?.text = label
     }

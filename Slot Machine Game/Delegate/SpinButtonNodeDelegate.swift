@@ -18,6 +18,7 @@
 
 import Foundation
 
+// for spin button to communicate to the GameScene
 protocol SpinButtonNodeDelegate: AnyObject {
     func spinButtonPressed()
 }
