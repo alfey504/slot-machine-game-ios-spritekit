@@ -18,7 +18,7 @@
 
 import SpriteKit
 
-class GameScene: SKScene, SpinButtonNodeDelegate, MessageNodeDelegate{
+class GameScene: SKScene, SpinButtonNodeDelegate, MessageNodeDelegate, ResetButtonDelegate{
     
     private var backgroundNode: BackgroundNode?
     private var jackpotNode: JackpotNode?
@@ -34,13 +34,16 @@ class GameScene: SKScene, SpinButtonNodeDelegate, MessageNodeDelegate{
     
     private var slotMachine: SlotMachine?
     
+    private var messageStack: Array<Int>?
+    
     init(betTextField: UITextField, view: SKView) {
         super.init(size: view.bounds.size)
         self.betTextField = betTextField
         self.betTextField?.addTarget(self, action: #selector(betChanged(_:)), for: .editingChanged)
         
         slotMachine = SlotMachine()
-        //slotMachine?.setSimulateJackpotWin(SIMULATE_JACKPOT_WIN: true)
+        messageStack = []
+//        slotMachine?.setSimulateJackpotWin(SIMULATE_JACKPOT_WIN: true)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -112,6 +115,7 @@ class GameScene: SKScene, SpinButtonNodeDelegate, MessageNodeDelegate{
         let resetButtonYOffset = -300.0
         resetButton?.position = CGPoint(x: frame.midX + resetButtonXOffset, y: frame.midY + resetButtonYOffset)
         resetButton?.zPosition = 1
+        resetButton?.delegate = self
         
         // adding all the nodes to the scene
         addChild(backgroundNode!)
@@ -127,21 +131,73 @@ class GameScene: SKScene, SpinButtonNodeDelegate, MessageNodeDelegate{
     
     // when the spin button is pressed
     func spinButtonPressed() {
-        let slotPredictions = Array<Int>([2, 4, 3, 1, 2])
-        slotNode?.animateSlotTo(predictions: slotPredictions)
+        slotMachine!.setBet(bet: Float(betTextField!.text!) ?? 0.0)
+        updateInfoFields()
+        
+        spinButton?.setEnabled(enabled: false)
+        
+        let slotPredictions = slotMachine!.spinSlot()
+        slotNode?.animateSlotTo(predictions: slotPredictions.spinOutCome)
+       
+        if(slotPredictions.win!){
+            spinWin(result: slotPredictions)
+        }else{
+            spinLost(result: slotPredictions)
+        }
+        
         if(slotMachine!.checkJackpotWin()){
             jackpotIsWon()
         }
+        
+        betTextField!.text = ""
+    }
+    
+    // functions to perform in the UI if there is a win
+    func spinWin(result: SlotSpinResult){
+        betTextField?.isHidden = true
+        
+        let message = "You have won"
+        let message2 = "$ " + String(result.winAmount)
+        messageNode = MessageNode(emoticon: SKTexture(imageNamed: "win"), header: "Win", message: message, message2: message2)
+        messageNode?.position = CGPoint(x: frame.midX, y: frame.midY)
+        messageNode?.zPosition = 20
+        
+        messageNode?.delegate = self
+        
+        messageStack?.append(1)
+        addChild(messageNode!)
+        updateInfoFields()
+        
+    }
+    
+    // fucntions to perform when the spin was a lose
+    func spinLost(result: SlotSpinResult){
+        betTextField?.isHidden = true
+        
+        let message = "You have lost"
+        let message2 = "$ " + String(result.winAmount)
+        messageNode = MessageNode(emoticon: SKTexture(imageNamed: "loss"), header: "Loss", message: message, message2: message2)
+        messageNode?.position = CGPoint(x: frame.midX, y: frame.midY)
+        messageNode?.zPosition = 20
+        
+        messageNode?.delegate = self
+        
+        messageStack?.append(1)
+        addChild(messageNode!)
+        updateInfoFields()
     }
     
     // when message is closed
     func messageClosed() {
-        betTextField?.isHidden = false
-        let text = betTextField!.text!
-        if(slotMachine!.verifyBet(text: text)){
-            spinButton?.setEnabled(enabled: true)
-        }else{
-            spinButton?.setEnabled(enabled: false)
+        messageStack?.popLast()
+        if(messageStack?.count == 0){
+            betTextField?.isHidden = false
+            let text = betTextField!.text!
+            if(slotMachine!.verifyBet(text: text)){
+                spinButton?.setEnabled(enabled: true)
+            }else{
+                spinButton?.setEnabled(enabled: false)
+            }
         }
     }
     
@@ -149,6 +205,9 @@ class GameScene: SKScene, SpinButtonNodeDelegate, MessageNodeDelegate{
     func jackpotIsWon(){
         
         betTextField?.isHidden = true
+        messageStack?.append(1)
+        
+        spinButton?.setEnabled(enabled: false)
         
         let message = "You have won the jackpot"
         let message2 = "$ " + String(slotMachine!.jackPot!)
@@ -182,4 +241,17 @@ class GameScene: SKScene, SpinButtonNodeDelegate, MessageNodeDelegate{
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
     }
+    
+    func updateInfoFields(){
+        creditsNode?.setValue(value: String(slotMachine!.credits!))
+        winnerPaidNode?.setValue(value: String(slotMachine!.winnerPaid!))
+        jackpotNode?.setJackpotMoney(money: slotMachine!.jackPot!)
+    }
+    
+    func resetButtonPressed() {
+        slotMachine?.reset()
+        betTextField?.text = ""
+        updateInfoFields()
+    }
+    
 }

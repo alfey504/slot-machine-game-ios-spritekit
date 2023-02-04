@@ -12,7 +12,6 @@ import SpriteKit
 class SlotReelNode: SKNode{
     
     private var reelBackdrop: SKSpriteNode?
-//    private var numberLabel: SKLabelNode?
     private var reelItemsTextures: Array<SKTexture>?
     private var reelItem: SKSpriteNode?
     
@@ -24,38 +23,30 @@ class SlotReelNode: SKNode{
         
         // backdrop of the reel
         let backdropColor = UIColor(red: 21.0/255.0, green: 32.0/255.0, blue: 62.0/255.0, alpha: 1.0)
-        let backdropSize = CGSize(width: 58, height: 75)
+        let backdropSize = CGSize(width: 100, height: 100.0)
         reelBackdrop = SKSpriteNode(color: backdropColor, size: backdropSize)
         reelBackdrop?.position = CGPoint(x: frame.midX, y: frame.midY)
         reelBackdrop?.zPosition = -1
         
         // setting up all the reel items
         reelItemsTextures = Array<SKTexture>()
-        for i in 1...5{
+        for i in 0...7{
             let texture = SKTexture(imageNamed: String(i))
             reelItemsTextures?.append(texture)
         }
         
         // initializing the reel
-        let randomReelItem = Int.random(in: 0...4)
+        let randomReelItem = Int.random(in: 0...7)
         reelItem = SKSpriteNode(texture: reelItemsTextures![randomReelItem])
-        reelItem?.size = CGSize(width: 58.0, height: 58.0)
+        reelItem?.size = CGSize(width: 80.0, height: 80.0)
         reelItem?.position = CGPoint(x: frame.midX, y: frame.midY)
         reelItem?.zPosition = 3
         
-//        numberLabel = SKLabelNode()
-//        numberLabel?.text = "7"
-//        numberLabel?.fontSize = 42
-//        numberLabel?.fontColor = .white
-//        numberLabel?.fontName = "Rye-Regular"
-//        numberLabel?.position = CGPoint(x: frame.midX, y: frame.midY - 15.0)
-//        numberLabel?.zPosition = 1
         
         size = reelBackdrop?.size
         borders = CGPoint(x: reelBackdrop!.frame.maxX, y: reelBackdrop!.frame.maxY)
         
         addChild(reelBackdrop!)
-//        addChild(numberLabel!)
         addChild(reelItem!)
         
     }
@@ -70,7 +61,7 @@ class SlotReelNode: SKNode{
                 }
                 Thread.sleep(forTimeInterval: wait)
                 DispatchQueue.main.async {
-                    let randomNumber = Int.random(in: 1...5)
+                    let randomNumber = Int.random(in: 0...7)
                     self.setSlotValue(number: randomNumber)
                 }
             }
@@ -83,7 +74,7 @@ class SlotReelNode: SKNode{
     
     // sets the item to the slot
     func setSlotValue(number: Int){
-        reelItem?.texture = reelItemsTextures![number - 1]
+        reelItem?.texture = reelItemsTextures![number]
     }
     
     required init?(coder aDecoder: NSCoder) {

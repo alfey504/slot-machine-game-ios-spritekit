@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		46288517297DFB6000E83BDB /* Rye-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46288516297DF2E100E83BDB /* Rye-Regular.ttf */; };
 		46288518297DFB6500E83BDB /* CuteFont-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46288515297DF2CB00E83BDB /* CuteFont-Regular.ttf */; };
+		F60AE177298B6F0E00B31A2B /* SlotResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60AE176298B6F0E00B31A2B /* SlotResult.swift */; };
 		F61EE035297AAD3200ED0423 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61EE034297AAD3200ED0423 /* AppDelegate.swift */; };
 		F61EE03B297AAD3200ED0423 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61EE03A297AAD3200ED0423 /* GameScene.swift */; };
 		F61EE03D297AAD3200ED0423 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61EE03C297AAD3200ED0423 /* GameViewController.swift */; };
@@ -33,6 +34,7 @@
 		F61EE08C297CE7D700ED0423 /* SlotMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61EE08B297CE7D700ED0423 /* SlotMachine.swift */; };
 		F61EE08E297D2E1800ED0423 /* MessageNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61EE08D297D2E1800ED0423 /* MessageNode.swift */; };
 		F61EE090297D36EF00ED0423 /* MessageNodeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61EE08F297D36EF00ED0423 /* MessageNodeDelegate.swift */; };
+		F6211FED298CD560006EF013 /* ResetButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6211FEC298CD560006EF013 /* ResetButtonDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,7 @@
 /* Begin PBXFileReference section */
 		46288515297DF2CB00E83BDB /* CuteFont-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CuteFont-Regular.ttf"; sourceTree = "<group>"; };
 		46288516297DF2E100E83BDB /* Rye-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rye-Regular.ttf"; sourceTree = "<group>"; };
+		F60AE176298B6F0E00B31A2B /* SlotResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotResult.swift; sourceTree = "<group>"; };
 		F61EE031297AAD3200ED0423 /* Slot Machine Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Slot Machine Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F61EE034297AAD3200ED0423 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F61EE03A297AAD3200ED0423 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -83,6 +86,7 @@
 		F61EE08B297CE7D700ED0423 /* SlotMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotMachine.swift; sourceTree = "<group>"; };
 		F61EE08D297D2E1800ED0423 /* MessageNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageNode.swift; sourceTree = "<group>"; };
 		F61EE08F297D36EF00ED0423 /* MessageNodeDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageNodeDelegate.swift; sourceTree = "<group>"; };
+		F6211FEC298CD560006EF013 /* ResetButtonDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetButtonDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +210,7 @@
 			children = (
 				F61EE082297BC21800ED0423 /* SpinButtonNodeDelegate.swift */,
 				F61EE08F297D36EF00ED0423 /* MessageNodeDelegate.swift */,
+				F6211FEC298CD560006EF013 /* ResetButtonDelegate.swift */,
 			);
 			path = Delegate;
 			sourceTree = "<group>";
@@ -214,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				F61EE08B297CE7D700ED0423 /* SlotMachine.swift */,
+				F60AE176298B6F0E00B31A2B /* SlotResult.swift */,
 			);
 			path = UtilClasses;
 			sourceTree = "<group>";
@@ -366,8 +372,10 @@
 				F61EE08E297D2E1800ED0423 /* MessageNode.swift in Sources */,
 				F61EE077297B3E4C00ED0423 /* SlotReelNode.swift in Sources */,
 				F61EE03D297AAD3200ED0423 /* GameViewController.swift in Sources */,
+				F60AE177298B6F0E00B31A2B /* SlotResult.swift in Sources */,
 				F61EE085297BC61700ED0423 /* StringExtension.swift in Sources */,
 				F61EE089297BCEF900ED0423 /* ResetButtonNode.swift in Sources */,
+				F6211FED298CD560006EF013 /* ResetButtonDelegate.swift in Sources */,
 				F61EE035297AAD3200ED0423 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

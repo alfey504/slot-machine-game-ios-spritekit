@@ -11,8 +11,17 @@ import SpriteKit
 // simple button node
 class ResetButtonNode: SKNode{
     
+    weak var delegate: ResetButtonDelegate?
     private var quitButtonSprite: SKSpriteNode?
     
+    override var isUserInteractionEnabled: Bool {
+           set {
+               // ignore
+           }
+           get {
+               return true
+           }
+    }
     
     override init() {
         super.init()
@@ -24,6 +33,10 @@ class ResetButtonNode: SKNode{
         quitButtonSprite?.zPosition = 2
         
         addChild(quitButtonSprite!)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        delegate?.resetButtonPressed()
     }
     
     required init?(coder aDecoder: NSCoder) {

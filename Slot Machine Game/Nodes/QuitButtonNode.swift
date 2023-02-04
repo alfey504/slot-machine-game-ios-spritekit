@@ -13,6 +13,15 @@ class QuitButtonNode: SKNode{
     
     private var quitButtonSprite: SKSpriteNode?
     
+    override var isUserInteractionEnabled: Bool {
+           set {
+               // ignore
+           }
+           get {
+               return true
+           }
+    }
+    
     override init() {
         super.init()
         
@@ -25,6 +34,9 @@ class QuitButtonNode: SKNode{
         addChild(quitButtonSprite!)
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        exit(0)
+    }
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
