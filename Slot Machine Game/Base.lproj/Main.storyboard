@@ -16,7 +16,7 @@
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="Slot_Machine_Game" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="BV1-FR-VrT" customClass="GameViewController" customModule="Slot_Machine_Game" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -29,26 +29,120 @@
                                 <fontDescription key="fontDescription" name="CuteFont-Regular" family="Cute Font" pointSize="28"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5b-5n-48Q">
+                                <rect key="frame" x="327" y="59" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="9zW-nu-wbR"/>
+                                    <constraint firstAttribute="height" constant="50" id="fx3-kp-Btq"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="?">
+                                    <fontDescription key="titleFontDescription" name="CuteFont-Regular" family="Cute Font" pointSize="32"/>
+                                    <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="baseBackgroundColor" systemColor="systemPinkColor"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="helpButtonPressed:" destination="BV1-FR-VrT" eventType="touchUpInside" id="WAE-RG-Pcn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="D5b-5n-48Q" firstAttribute="top" secondItem="4qk-I5-YsI" secondAttribute="top" id="QdD-c4-Stm"/>
                             <constraint firstItem="Bjr-A6-i8K" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="30" id="V6j-JR-E5W"/>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="D5b-5n-48Q" secondAttribute="trailing" constant="16" id="i0Y-8n-efN"/>
                             <constraint firstItem="Bjr-A6-i8K" firstAttribute="top" secondItem="4qk-I5-YsI" secondAttribute="top" constant="540" id="ikU-dQ-SZo"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="betTextField" destination="Bjr-A6-i8K" id="aJj-zJ-03l"/>
+                        <outlet property="helpButton" destination="D5b-5n-48Q" id="3rg-uB-Qru"/>
+                        <segue destination="DOd-QV-KZ5" kind="show" identifier="gotToHelpScreen" id="gMX-Ln-eaS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="130.53435114503816" y="-34.507042253521128"/>
         </scene>
+        <!--Help Screen View Contoller-->
+        <scene sceneID="SCS-Iq-Ft8">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="DOd-QV-KZ5" customClass="HelpScreenViewContoller" customModule="Slot_Machine_Game" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="R1u-WK-Xbf">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HoL-Fk-Wd4">
+                                <rect key="frame" x="16" y="59" width="361" height="759"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4mw-qE-Qs5">
+                                        <rect key="frame" x="8" y="8" width="345" height="664"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bcK-eC-WkR">
+                                                <rect key="frame" x="8" y="8" width="329" height="1052"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1052" id="Trf-go-pc0"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="bcK-eC-WkR" firstAttribute="leading" secondItem="4mw-qE-Qs5" secondAttribute="leadingMargin" id="FRc-J3-b79"/>
+                                            <constraint firstItem="bcK-eC-WkR" firstAttribute="trailing" secondItem="4mw-qE-Qs5" secondAttribute="trailingMargin" id="ZOk-qE-tZJ"/>
+                                            <constraint firstItem="bcK-eC-WkR" firstAttribute="top" secondItem="4mw-qE-Qs5" secondAttribute="topMargin" id="hPB-YU-WeX"/>
+                                            <constraint firstItem="bcK-eC-WkR" firstAttribute="centerX" secondItem="4mw-qE-Qs5" secondAttribute="centerX" id="lKX-rI-ZLr"/>
+                                            <constraint firstAttribute="bottom" secondItem="bcK-eC-WkR" secondAttribute="bottom" constant="-396" id="mD2-VK-zXl"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="contentLayoutGuide" id="SGP-h2-5QW"/>
+                                        <viewLayoutGuide key="frameLayoutGuide" id="1Ay-16-gOt"/>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="4mw-qE-Qs5" firstAttribute="top" secondItem="HoL-Fk-Wd4" secondAttribute="topMargin" id="HCC-zK-zFv"/>
+                                    <constraint firstItem="4mw-qE-Qs5" firstAttribute="leading" secondItem="HoL-Fk-Wd4" secondAttribute="leadingMargin" id="ZcX-6C-iP7"/>
+                                    <constraint firstItem="4mw-qE-Qs5" firstAttribute="trailing" secondItem="HoL-Fk-Wd4" secondAttribute="trailingMargin" id="orT-B8-5wf"/>
+                                    <constraint firstAttribute="bottom" secondItem="4mw-qE-Qs5" secondAttribute="bottom" constant="87" id="pxP-Yz-RLQ"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6RE-ia-aca"/>
+                        <color key="backgroundColor" red="0.082352941176470587" green="0.12549019607843137" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="HoL-Fk-Wd4" firstAttribute="leading" secondItem="6RE-ia-aca" secondAttribute="leading" constant="16" id="IsG-IQ-7yB"/>
+                            <constraint firstItem="HoL-Fk-Wd4" firstAttribute="bottom" secondItem="6RE-ia-aca" secondAttribute="bottom" id="Sgn-qj-hSi"/>
+                            <constraint firstItem="HoL-Fk-Wd4" firstAttribute="top" secondItem="6RE-ia-aca" secondAttribute="top" id="dOO-hn-hd3"/>
+                            <constraint firstItem="6RE-ia-aca" firstAttribute="trailing" secondItem="HoL-Fk-Wd4" secondAttribute="trailing" constant="16" id="tiX-OB-fu4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="gC4-K3-4Qb"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0EQ-ri-Q1a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-677.0992366412213" y="-35.211267605633807"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

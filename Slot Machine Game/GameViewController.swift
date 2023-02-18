@@ -20,8 +20,11 @@ import UIKit
 import SpriteKit
 
 class GameViewController: UIViewController {
+    
+    let helpScreenSegueIdentifier: String = "gotToHelpScreen"
 
     @IBOutlet weak var betTextField: UITextField!
+    @IBOutlet weak var helpButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +43,10 @@ class GameViewController: UIViewController {
             view.showsNodeCount = true
             view.showsPhysics = true
         }
+    }
+    
+    @IBAction func helpButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: helpScreenSegueIdentifier, sender: self)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

@@ -40,11 +40,18 @@ class SlotMachine{
     var credits: Float?
     var winnerPaid: Float?
     var currentBet: Float?
-    var jackPot: Float?
+    private var jackPot: Float?
+    private var highestPayout: Float?
     
     private var SIMULATE_JACKPOT_WIN: Bool?
     
-    init(credits: Float = 1000.0, winnerPaid: Float = 0.0, currentBet: Float = 0.0, jackpot: Float = 5000, SIMULATE_JACKPOT_WIN: Bool = false) {
+    init(
+        credits: Float = 1000.0,
+        winnerPaid: Float = 0.0,
+        currentBet: Float = 0.0,
+        jackpot: Float = 5000,
+        SIMULATE_JACKPOT_WIN: Bool = false
+    ){
         self.credits = credits
         self.winnerPaid = winnerPaid
         self.currentBet = currentBet
@@ -178,11 +185,34 @@ class SlotMachine{
         return(largestIndex, largestElement)
     }
     
-    func reset(credits: Float = 1000.0, winnerPaid: Float = 0.0, currentBet: Float = 0.0, jackpot: Float = 5000, SIMULATE_JACKPOT_WIN: Bool = false) {
+    // when there is a jackpot win
+    func jacKpotWin(){
+        setJackPot(jackpot: 1000)
+    }
+    
+    
+    // set and get function for highest payout
+    func getHighestPayout() -> Float {
+        return self.highestPayout!
+    }
+    
+    func setHighestPayout(highestPayout: Float) {
+        self.highestPayout = highestPayout
+    }
+    
+    // set and get function for jackpot
+    func getJackpot() -> Float {
+        return self.jackPot!
+    }
+    
+    func setJackPot(jackpot: Float){
+        self.jackPot = jackpot
+    }
+    
+    func reset(credits: Float = 1000.0, winnerPaid: Float = 0.0, currentBet: Float = 0.0, SIMULATE_JACKPOT_WIN: Bool = false) {
         self.credits = credits
         self.winnerPaid = winnerPaid
         self.currentBet = currentBet
-        self.jackPot = jackpot
         self.SIMULATE_JACKPOT_WIN = SIMULATE_JACKPOT_WIN
     }
 }

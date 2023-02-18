@@ -17,11 +17,13 @@ class SlotNode: SKNode{
     private var slotReel4: SlotReelNode?
     private var slotReel5: SlotReelNode?
     
+    weak var reelDelegate: SpinReelDelegate?
+    
     private var slotBackdrop: SKSpriteNode?
     
     private var slotReelNodes: Array<SlotReelNode>?
     
-    override init() {
+    init(reelDelegate: SpinReelDelegate) {
         super.init()
         
         // backdrop of the node
@@ -38,16 +40,22 @@ class SlotNode: SKNode{
         print(slotReelXOffset)
         slotReel1?.position = CGPoint(x:  slotBackdrop!.frame.minX  + slotReelXOffset, y: frame.midY + 3)
         slotReel1?.zPosition = 2
+        slotReel1?.delegate = reelDelegate
+        slotReel1?.nodeId = 1
         
         slotReel2 = SlotReelNode(offset: slotReelYOffset)
         slotReel2?.position = CGPoint(x: slotReel1!.frame.midX + slotReelXOffset * 2 - slotReelXOffset2, y: frame.midY + 3)
         print(slotReel1!.frame.midX)
         slotReel2?.zPosition = 2
+        slotReel2?.delegate = reelDelegate
+        slotReel2?.nodeId = 2
         
         slotReel3 = SlotReelNode(offset: slotReelYOffset)
         slotReel3?.position = CGPoint(x: slotReel2!.frame.midX + slotReelXOffset * 2 - slotReelXOffset2, y: frame.midY + 3)
         print(slotReel1!.frame.midX)
         slotReel3?.zPosition = 2
+        slotReel3?.delegate = reelDelegate
+        slotReel3?.nodeId = 3
         
         slotBackdrop?.addChild(slotReel1!)
         slotBackdrop?.addChild(slotReel2!)

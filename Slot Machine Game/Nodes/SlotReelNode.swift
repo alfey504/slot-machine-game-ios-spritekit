@@ -11,6 +11,10 @@ import SpriteKit
 // For showing each reel of a slot
 class SlotReelNode: SKNode{
     
+    weak var delegate: SpinReelDelegate?
+    
+    var nodeId: Int?
+    
     private var reelBackdrop: SKSpriteNode?
     private var reelItemsTextures: Array<SKTexture>?
     private var reelItem: SKSpriteNode?
@@ -52,10 +56,11 @@ class SlotReelNode: SKNode{
     }
     
     //moves the the reel item to the given item
-    func moveSlotTo(number: Int){
+    func moveSlotTo(number: Int) {
         DispatchQueue.global(qos: .userInitiated).async {
             var wait = 0.02
-            for i in 1...20{
+            let rotateCount = 20
+            for i in 1...rotateCount{
                 if(i % 2 == 0){
                     wait += 0.05
                 }
@@ -68,6 +73,7 @@ class SlotReelNode: SKNode{
             Thread.sleep(forTimeInterval: wait)
             DispatchQueue.main.async {
                 self.setSlotValue(number: number)
+                self.delegate?.animationCompleteOnReelNode(id: self.nodeId!)
             }
         }
     }

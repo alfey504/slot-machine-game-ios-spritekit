@@ -35,6 +35,8 @@
 		F61EE08E297D2E1800ED0423 /* MessageNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61EE08D297D2E1800ED0423 /* MessageNode.swift */; };
 		F61EE090297D36EF00ED0423 /* MessageNodeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61EE08F297D36EF00ED0423 /* MessageNodeDelegate.swift */; };
 		F6211FED298CD560006EF013 /* ResetButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6211FEC298CD560006EF013 /* ResetButtonDelegate.swift */; };
+		F62BDCEB29A0210000DEE62E /* HelpScreenViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62BDCEA29A0210000DEE62E /* HelpScreenViewContoller.swift */; };
+		F62BDCED29A17EBE00DEE62E /* SpinReelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62BDCEC29A17EBE00DEE62E /* SpinReelDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,8 @@
 		F61EE08D297D2E1800ED0423 /* MessageNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageNode.swift; sourceTree = "<group>"; };
 		F61EE08F297D36EF00ED0423 /* MessageNodeDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageNodeDelegate.swift; sourceTree = "<group>"; };
 		F6211FEC298CD560006EF013 /* ResetButtonDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetButtonDelegate.swift; sourceTree = "<group>"; };
+		F62BDCEA29A0210000DEE62E /* HelpScreenViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpScreenViewContoller.swift; sourceTree = "<group>"; };
+		F62BDCEC29A17EBE00DEE62E /* SpinReelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinReelDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +153,7 @@
 				F61EE03E297AAD3200ED0423 /* Main.storyboard */,
 				F61EE041297AAD3300ED0423 /* Assets.xcassets */,
 				F61EE043297AAD3300ED0423 /* LaunchScreen.storyboard */,
+				F62BDCEA29A0210000DEE62E /* HelpScreenViewContoller.swift */,
 			);
 			path = "Slot Machine Game";
 			sourceTree = "<group>";
@@ -211,6 +216,7 @@
 				F61EE082297BC21800ED0423 /* SpinButtonNodeDelegate.swift */,
 				F61EE08F297D36EF00ED0423 /* MessageNodeDelegate.swift */,
 				F6211FEC298CD560006EF013 /* ResetButtonDelegate.swift */,
+				F62BDCEC29A17EBE00DEE62E /* SpinReelDelegate.swift */,
 			);
 			path = Delegate;
 			sourceTree = "<group>";
@@ -362,6 +368,7 @@
 				F61EE07B297B8C3C00ED0423 /* InputNode.swift in Sources */,
 				F61EE08C297CE7D700ED0423 /* SlotMachine.swift in Sources */,
 				F61EE075297B3E0000ED0423 /* SlotNode.swift in Sources */,
+				F62BDCEB29A0210000DEE62E /* HelpScreenViewContoller.swift in Sources */,
 				F61EE087297BCC1800ED0423 /* QuitButtonNode.swift in Sources */,
 				F61EE079297B879100ED0423 /* InfoNode.swift in Sources */,
 				F61EE080297BBBCD00ED0423 /* SpinButtonNode.swift in Sources */,
@@ -370,6 +377,7 @@
 				F61EE090297D36EF00ED0423 /* MessageNodeDelegate.swift in Sources */,
 				F61EE06A297AB7AE00ED0423 /* BackgroundNode.swift in Sources */,
 				F61EE08E297D2E1800ED0423 /* MessageNode.swift in Sources */,
+				F62BDCED29A17EBE00DEE62E /* SpinReelDelegate.swift in Sources */,
 				F61EE077297B3E4C00ED0423 /* SlotReelNode.swift in Sources */,
 				F61EE03D297AAD3200ED0423 /* GameViewController.swift in Sources */,
 				F60AE177298B6F0E00B31A2B /* SlotResult.swift in Sources */,
