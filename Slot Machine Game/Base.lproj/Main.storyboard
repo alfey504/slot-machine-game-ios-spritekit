@@ -61,6 +61,7 @@
                             <constraint firstItem="Bjr-A6-i8K" firstAttribute="top" secondItem="4qk-I5-YsI" secondAttribute="top" constant="540" id="ikU-dQ-SZo"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="2Q4-bl-14M"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="betTextField" destination="Bjr-A6-i8K" id="aJj-zJ-03l"/>
@@ -86,31 +87,100 @@
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4mw-qE-Qs5">
                                         <rect key="frame" x="8" y="8" width="345" height="664"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bcK-eC-WkR">
-                                                <rect key="frame" x="8" y="8" width="329" height="1052"/>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="IoB-Un-cuG">
+                                                <rect key="frame" x="0.0" y="0.0" width="345" height="664"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="1052" id="Trf-go-pc0"/>
-                                                </constraints>
-                                            </view>
+                                                <prototypes>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="header" id="QSv-KO-wie" customClass="HeaderCell" customModule="Slot_Machine_Game" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="50" width="345" height="40"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QSv-KO-wie" id="F5k-7f-wo5">
+                                                            <rect key="frame" x="0.0" y="0.0" width="345" height="40"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vcL-py-8Lp">
+                                                                    <rect key="frame" x="0.0" y="10.999999999999998" width="341" height="17.333333333333329"/>
+                                                                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="bottom" secondItem="vcL-py-8Lp" secondAttribute="bottom" constant="11.67" id="JzX-b2-eEs"/>
+                                                                <constraint firstItem="vcL-py-8Lp" firstAttribute="leading" secondItem="F5k-7f-wo5" secondAttribute="leading" id="N88-7n-sQj"/>
+                                                                <constraint firstAttribute="trailing" secondItem="vcL-py-8Lp" secondAttribute="trailing" constant="4" id="bEj-u1-QZg"/>
+                                                                <constraint firstItem="vcL-py-8Lp" firstAttribute="top" secondItem="F5k-7f-wo5" secondAttribute="top" constant="11" id="xIx-EY-qmI"/>
+                                                            </constraints>
+                                                        </tableViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="header" destination="vcL-py-8Lp" id="9Lc-HG-0xa"/>
+                                                        </connections>
+                                                    </tableViewCell>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="listItem" id="eHw-C9-l3t" customClass="ItemCell" customModule="Slot_Machine_Game" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="90" width="345" height="37"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eHw-C9-l3t" id="xt0-mY-p2a">
+                                                            <rect key="frame" x="0.0" y="0.0" width="345" height="37"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pSG-9a-uyx">
+                                                                    <rect key="frame" x="20" y="11" width="325" height="14"/>
+                                                                    <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="12"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="trailing" secondItem="pSG-9a-uyx" secondAttribute="trailing" id="YQe-Up-CZr"/>
+                                                                <constraint firstItem="pSG-9a-uyx" firstAttribute="leading" secondItem="xt0-mY-p2a" secondAttribute="leading" constant="20" symbolic="YES" id="g2g-Mb-z0Q"/>
+                                                                <constraint firstItem="pSG-9a-uyx" firstAttribute="top" secondItem="xt0-mY-p2a" secondAttribute="top" constant="11" id="tgo-AR-16W"/>
+                                                                <constraint firstAttribute="bottom" secondItem="pSG-9a-uyx" secondAttribute="bottom" constant="12" id="zSD-ci-cZb"/>
+                                                            </constraints>
+                                                        </tableViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="listItem" destination="pSG-9a-uyx" id="Dsi-60-ROX"/>
+                                                        </connections>
+                                                    </tableViewCell>
+                                                </prototypes>
+                                            </tableView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="bcK-eC-WkR" firstAttribute="leading" secondItem="4mw-qE-Qs5" secondAttribute="leadingMargin" id="FRc-J3-b79"/>
-                                            <constraint firstItem="bcK-eC-WkR" firstAttribute="trailing" secondItem="4mw-qE-Qs5" secondAttribute="trailingMargin" id="ZOk-qE-tZJ"/>
-                                            <constraint firstItem="bcK-eC-WkR" firstAttribute="top" secondItem="4mw-qE-Qs5" secondAttribute="topMargin" id="hPB-YU-WeX"/>
-                                            <constraint firstItem="bcK-eC-WkR" firstAttribute="centerX" secondItem="4mw-qE-Qs5" secondAttribute="centerX" id="lKX-rI-ZLr"/>
-                                            <constraint firstAttribute="bottom" secondItem="bcK-eC-WkR" secondAttribute="bottom" constant="-396" id="mD2-VK-zXl"/>
+                                            <constraint firstItem="IoB-Un-cuG" firstAttribute="leading" secondItem="1Ay-16-gOt" secondAttribute="leading" id="C4n-8c-WIQ"/>
+                                            <constraint firstItem="IoB-Un-cuG" firstAttribute="trailing" secondItem="1Ay-16-gOt" secondAttribute="trailing" id="Jyv-et-3wl"/>
+                                            <constraint firstItem="IoB-Un-cuG" firstAttribute="bottom" secondItem="1Ay-16-gOt" secondAttribute="bottom" id="aMA-Zg-Mgv"/>
+                                            <constraint firstAttribute="bottom" secondItem="IoB-Un-cuG" secondAttribute="bottom" id="cB5-Vv-wRt"/>
+                                            <constraint firstItem="IoB-Un-cuG" firstAttribute="top" secondItem="1Ay-16-gOt" secondAttribute="top" id="hBV-SQ-Jgi"/>
+                                            <constraint firstAttribute="trailing" secondItem="IoB-Un-cuG" secondAttribute="trailing" id="rLU-fn-i23"/>
                                         </constraints>
                                         <viewLayoutGuide key="contentLayoutGuide" id="SGP-h2-5QW"/>
                                         <viewLayoutGuide key="frameLayoutGuide" id="1Ay-16-gOt"/>
                                     </scrollView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nqa-zh-pt0">
+                                        <rect key="frame" x="118" y="691" width="125" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Q7k-eb-icc"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Back To Game">
+                                            <fontDescription key="titleFontDescription" name="CuteFont-Regular" family="Cute Font" pointSize="24"/>
+                                            <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="baseBackgroundColor" systemColor="systemPinkColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="backToGameButtonPressed:" destination="DOd-QV-KZ5" eventType="touchUpInside" id="Rgc-cE-qS3"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="4mw-qE-Qs5" firstAttribute="top" secondItem="HoL-Fk-Wd4" secondAttribute="topMargin" id="HCC-zK-zFv"/>
-                                    <constraint firstItem="4mw-qE-Qs5" firstAttribute="leading" secondItem="HoL-Fk-Wd4" secondAttribute="leadingMargin" id="ZcX-6C-iP7"/>
-                                    <constraint firstItem="4mw-qE-Qs5" firstAttribute="trailing" secondItem="HoL-Fk-Wd4" secondAttribute="trailingMargin" id="orT-B8-5wf"/>
-                                    <constraint firstAttribute="bottom" secondItem="4mw-qE-Qs5" secondAttribute="bottom" constant="87" id="pxP-Yz-RLQ"/>
+                                    <constraint firstItem="4mw-qE-Qs5" firstAttribute="trailing" secondItem="HoL-Fk-Wd4" secondAttribute="trailingMargin" id="2CM-yO-SGm"/>
+                                    <constraint firstItem="nqa-zh-pt0" firstAttribute="top" secondItem="4mw-qE-Qs5" secondAttribute="bottom" constant="19" id="2oi-Bt-3m1"/>
+                                    <constraint firstAttribute="bottom" secondItem="4mw-qE-Qs5" secondAttribute="bottom" constant="87" id="BAB-6u-rKN"/>
+                                    <constraint firstItem="nqa-zh-pt0" firstAttribute="leading" secondItem="HoL-Fk-Wd4" secondAttribute="leading" constant="118" id="M9q-pk-epk"/>
+                                    <constraint firstAttribute="bottom" secondItem="nqa-zh-pt0" secondAttribute="bottom" constant="18" id="hll-hm-H4c"/>
+                                    <constraint firstItem="4mw-qE-Qs5" firstAttribute="top" secondItem="HoL-Fk-Wd4" secondAttribute="topMargin" id="ixK-zv-wJd"/>
+                                    <constraint firstAttribute="trailing" secondItem="nqa-zh-pt0" secondAttribute="trailing" constant="118" id="oeN-kN-cP0"/>
+                                    <constraint firstItem="4mw-qE-Qs5" firstAttribute="leading" secondItem="HoL-Fk-Wd4" secondAttribute="leadingMargin" id="tas-EO-bYC"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
@@ -131,10 +201,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="gC4-K3-4Qb"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="directionListTableView" destination="IoB-Un-cuG" id="lRt-lh-R51"/>
+                        <segue destination="BV1-FR-VrT" kind="show" identifier="back_to_game" id="m0r-N8-5V0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0EQ-ri-Q1a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-677.0992366412213" y="-35.211267605633807"/>
+            <point key="canvasLocation" x="-799.23664122137404" y="-25.35211267605634"/>
         </scene>
     </scenes>
     <resources>

@@ -50,12 +50,14 @@ class SlotMachine{
         winnerPaid: Float = 0.0,
         currentBet: Float = 0.0,
         jackpot: Float = 5000,
+        highestPayout: Float = 0.0,
         SIMULATE_JACKPOT_WIN: Bool = false
     ){
         self.credits = credits
         self.winnerPaid = winnerPaid
         self.currentBet = currentBet
         self.jackPot = jackpot
+        self.highestPayout = highestPayout
         self.SIMULATE_JACKPOT_WIN = SIMULATE_JACKPOT_WIN
     }
     
@@ -110,6 +112,7 @@ class SlotMachine{
         }
     }
     
+    // chek if a given number is in range
     func checkRange(value: Int, lower: Int, upper: Int) -> Int{
         if(value >= lower && value <= upper){
             return value
@@ -118,6 +121,7 @@ class SlotMachine{
         }
     }
     
+    // map random value to an item based on probability
     func getItemFromRandom(random: Int) -> Int{
         
         switch random{
@@ -142,6 +146,7 @@ class SlotMachine{
         }
     }
     
+    // simulate a slot spin
     func spinSlot() -> SlotSpinResult{
         
         var spinOutCome = [1, 3, 6]
@@ -160,8 +165,10 @@ class SlotMachine{
         return(result)
     }
     
+    // evaluate the outcome of a spin
     func evaluateResult(outcomeCount: Array<Int>) -> (Bool, Float){
         if(outcomeCount[SlotMachine.SLOT_ITEM_ROTTEN_APPLE] > 0){
+            self.incrementJackpot()
             return (false, 0.0)
         }
         
@@ -169,10 +176,19 @@ class SlotMachine{
         
         let wining = currentBet! * Float(SlotMachine.SLOT_ITEM_MULTIPLIERS[count-1][index])
         
+        self.isHighestPayout(currentPayout: wining)
+        
         self.credits! += wining
         return(true, wining)
     }
     
+    // increment jackpot by a 0.1 of bet %
+    func incrementJackpot(){
+        let newJackPot = jackPot! + (currentBet! * 0.1)
+        setJackPot(jackpot: newJackPot)
+    }
+    
+    // find the item with most count
     func findHighest(array: Array<Int>) -> (Int, Int){
         var largestIndex = 0
         var largestElement = 0
@@ -185,28 +201,50 @@ class SlotMachine{
         return(largestIndex, largestElement)
     }
     
-    // when there is a jackpot win
-    func jacKpotWin(){
-        setJackPot(jackpot: 1000)
+    // check if the given payout is the highest payout
+    func isHighestPayout(currentPayout: Float){
+        if(currentPayout > self.getHighestPayout()){
+            self.setHighestPayout(highestPayout: currentPayout)
+        }
     }
     
     
+    // when there is a jackpot win
+    func jacKpotWin() -> Float{
+        let winMoney = self.jackPot!
+        isHighestPayout(currentPayout: winMoney)
+        setJackPot(jackpot: 1000)
+        return winMoney
+    }
+    
     // set and get function for highest payout
+    // returns current highest payout
     func getHighestPayout() -> Float {
         return self.highestPayout!
     }
     
+    // set highest payout value and save it to memory
     func setHighestPayout(highestPayout: Float) {
         self.highestPayout = highestPayout
+        UserDefaultsHandler.saveHighestPayout(highestPayout: self.highestPayout!)
     }
     
     // set and get function for jackpot
+    // returns current jackpot
     func getJackpot() -> Float {
         return self.jackPot!
     }
     
+    // set jackpot value and save it to memory
     func setJackPot(jackpot: Float){
         self.jackPot = jackpot
+        UserDefaultsHandler.saveJackpot(jackPot: self.jackPot!)
+    }
+    
+    // load jackpot data and highest payout from memory
+    func loadData(){
+        self.jackPot = UserDefaultsHandler.loadJackpot()
+        self.highestPayout = UserDefaultsHandler.loadHighestPayout()
     }
     
     func reset(credits: Float = 1000.0, winnerPaid: Float = 0.0, currentBet: Float = 0.0, SIMULATE_JACKPOT_WIN: Bool = false) {

@@ -52,6 +52,7 @@ class GameScene:
         self.betTextField?.addTarget(self, action: #selector(betChanged(_:)), for: .editingChanged)
         
         slotMachine = SlotMachine()
+        slotMachine?.loadData()
         messageStack = []
 //        slotMachine?.setSimulateJackpotWin(SIMULATE_JACKPOT_WIN: true)
     }
@@ -95,8 +96,8 @@ class GameScene:
         winnerPaidNode = InfoNode()
         let winnerPaidNodeXOffset = 90.0
         let winnerPaidNodeYOffset = -90.0
-        winnerPaidNode?.setTitle(title: "WINNER PAID")
-        winnerPaidNode?.setValue(value: String(slotMachine!.winnerPaid!))
+        winnerPaidNode?.setTitle(title: "HIGHEST PAYOUT")
+        winnerPaidNode?.setValue(value: String(slotMachine!.getHighestPayout()))
         winnerPaidNode?.position = CGPoint(x: frame.midX + winnerPaidNodeXOffset, y: frame.midY + winnerPaidNodeYOffset)
         winnerPaidNode?.zPosition = 1
         
@@ -142,7 +143,8 @@ class GameScene:
     
     // when the spin button is pressed
     func spinButtonPressed() {
-        slotMachine!.setBet(bet: Float(betTextField!.text!) ?? 0.0)
+        let bet = Float(betTextField!.text!) ?? 0.0
+        slotMachine!.setBet(bet: bet)
         updateInfoFields()
         
         spinButton?.setEnabled(enabled: false)
@@ -221,14 +223,11 @@ class GameScene:
     // when  the jackpot is won
     func jackpotIsWon(){
         
-        slotMachine?.jacKpotWin()
-        
-        betTextField?.isHidden = true
-        spinButton?.setEnabled(enabled: false)
+        let jackpotMoney = slotMachine?.jacKpotWin()
         
         showMessage(
             message: "You have won the jackpot",
-            message2: "$ " + String(slotMachine!.getJackpot()),
+            message2: "$ " + String(jackpotMoney!),
             messageImage: "jackpot-banner",
             messageHeader: "Jackpot",
             zPosition: 100)
@@ -264,12 +263,11 @@ class GameScene:
         resetReelsAnimating()
         if(slotMachineResult!.win!){
             spinWin(result: slotMachineResult!)
+            if(slotMachine!.checkJackpotWin()){
+                jackpotIsWon()
+            }
         }else{
             spinLost(result: slotMachineResult!)
-        }
-
-        if(slotMachine!.checkJackpotWin()){
-            jackpotIsWon()
         }
     }
     
@@ -297,7 +295,7 @@ class GameScene:
     
     func updateInfoFields(){
         creditsNode?.setValue(value: String(slotMachine!.credits!))
-        winnerPaidNode?.setValue(value: String(slotMachine!.winnerPaid!))
+        winnerPaidNode?.setValue(value: String(slotMachine!.getHighestPayout()))
         jackpotNode?.setJackpotMoney(money: slotMachine!.getJackpot())
     }
     
