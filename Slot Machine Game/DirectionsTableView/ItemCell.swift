@@ -23,7 +23,7 @@ class ItemCell: UITableViewCell {
     }
     
     func setItem(item: String){
-        self.listItem.text = item
+        self.listItem.text = "- " + item
     }
 
 }

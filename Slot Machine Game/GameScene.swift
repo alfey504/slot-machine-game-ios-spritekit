@@ -249,7 +249,13 @@ class GameScene:
         reelsAnimating[id-1] = true
         
         if(isReelAnimationComplete(reels: reelsAnimating)){
-            animationComplete()
+            let wait:Double = 1
+            DispatchQueue.global(qos: .userInitiated).async {
+                Thread.sleep(forTimeInterval: wait)
+                DispatchQueue.main.async {
+                    self.animationComplete()
+                }
+            }
         }
         
     }
@@ -261,6 +267,7 @@ class GameScene:
     func animationComplete() {
         
         resetReelsAnimating()
+        
         if(slotMachineResult!.win!){
             spinWin(result: slotMachineResult!)
             if(slotMachine!.checkJackpotWin()){

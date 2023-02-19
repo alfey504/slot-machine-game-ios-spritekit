@@ -23,15 +23,70 @@ class HelpScreenViewContoller: UIViewController, UITableViewDelegate, UITableVie
         directionListTableView.delegate = self
         directionListTableView.dataSource = self
         
-        for _ in 0...10{
-            let directions = [
-                "Vasu",
-                "Abbhi kuttan",
-                "sudalamani"
-            ]
+        
+        var header = "How To"
+        var directions = [
+            "Tap the bet text box to enter a bet",
+            "Once you enter the bet press on the Spin button",
+            "Slot machine will give a pattern of fruits",
+            "Based on the patterns you will get a winning",
+            "refer below for how the winnings and probabilites of each items work",
+            "the winning amount is a multiple of the bet you placed",
+            "Every time you win a slot you might also have a chance of winning jackpot",
+            "Jackpot is incremented every time a bet is lost"
+        ]
+        
+        directionList.addDirection(header: header, directions: directions)
+        
+        header = "Winnings"
+        directions = [
             
-            directionList.addDirection(header: "Sudalamani", directions: directions)
-        }
+            "1 x Bad Apple = bet * 0",
+            "1 x Orange = bet * 1",
+            "1 x Peach = bet * 1",
+            "1 x Avocado = bet * 1",
+            "1 x Strawberry = bet * 1",
+            "1 x Banana = bet * 1",
+            "1 x Apple = bet * 1",
+            "1 x Lemon = bet * 7",
+            
+            "2 x Bad Apple = bet * 0",
+            "2 x Orange = bet * 2",
+            "2 x Peach = bet * 2",
+            "2 x Avocado = bet * 3",
+            "2 x Strawberry = bet * 4",
+            "2 x Banana = bet * 5",
+            "2 x Apple = bet * 10",
+            "2 x Lemon = bet * 20",
+            
+            "3 x Bad Apple = bet * 0",
+            "3 x Orange = bet * 10",
+            "3 x Peach = bet * 20",
+            "3 x Avocado = bet * 30",
+            "3 x Strawberry = bet * 40",
+            "3 x Banana = bet * 50",
+            "3 x Apple = bet * 75",
+            "3 x Lemon = bet * 100",
+            
+        ]
+        
+        directionList.addDirection(header: header, directions: directions)
+        
+        header = "Probabilities"
+        
+        directions = [
+            
+            "Bad Apple = 41.5 %",
+            "Orange = 15.4 %",
+            "Peach = 13.8 %",
+            "Avocado = 12.3 %",
+            "trawberry = 7.7 %",
+            "Banana = 4.6 %",
+            "Apple = 3.1 %",
+            "Lemon = 1.5 %",
+        ]
+        
+        directionList.addDirection(header: header, directions: directions)
        
         print(directionList.itemAt(at: 1))
         
